@@ -6,4 +6,4 @@ description      'Installs and configures IIS, the W3SVC, and sets a basic home 
 long_description 'Installs and configures IIS, the W3SVC, and sets a basic home page. This cookbook is used by the Learn Chef tutorials. https://learn.chef.io'
 supports         'windows'
 version          '0.2.0'
-depends          'git::windows'
+depends          'git'

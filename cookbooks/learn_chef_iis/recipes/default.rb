@@ -19,22 +19,10 @@ service 'w3svc' do
   action [:enable, :start]
 end
 
-template 'c:\inetpub\wwwroot\Default.htm' do
-  source 'index.html.erb'
-end
-
-directory 'C:\MyDirectory' do
-  action :create
-  recursive true
-  rights :full_control, "Administrator", :applies_to_children => true
-end
-
-git_client 'default' do
-  action :install
-end
-
-git 'C:\MyDirectory' do
-  repository "git://github.com/opscode/chef.git"
+git 'C:\inetpub\wwwroot' do
+  repository "git://github.com/geethaka/webtest.git"
+  destination 'C:\inetpub\wwwroot'
   reference "master"
   action :sync
 end
+
